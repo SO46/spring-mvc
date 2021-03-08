@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+    <table>
+        thead>
+            <tr>
+                <th th:text="#{msgs.headers.id}">id</th>
+                <th th:text="#{msgs.headers.series}">series</th>
+                <th th:text="#{msgs.headers.model}">model</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car: ${allProducts}">
+                <td th:utext="${state.index}">Index</td>
+                <td th:utext="${car.getId()}">id</td>
+                <td th:utext="${car.getSeries()}">series</td>
+                <td th:utext="${car.getModel()}">model</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
